@@ -1,0 +1,117 @@
+%% Exercise 1 Template method
+
+clear all;
+close all;
+clc;
+
+image = imread('./Images/road.png');
+[rows, cols] = size(image);
+%imshow(lena);
+G1 = 1/4*[1 0 -1;2 0 -2; 1 0 -1]; 
+G2 = 1/4*[-1 -2 -1; 0 0 0;1 2 1];
+
+
+% For Sobel filter
+
+for N=0:5:102
+    edges = edge_detection(image, G1, G2,N, 2);
+    figure('name', strcat('Exercise 1 Sobel with threshold : ', num2str(N)))
+    imshow(edges)
+end
+
+% For Prewitt filter
+G1 = 1/3*[1 0 -1;1 0 -1; 1 0 -1]; 
+G2 = 1/3*[-1 -1 -1;0 0 0;1 1 1]; 
+for N=0:5:102
+    edges = edge_detection(image, G1, G2,N, 2);
+    figure('name', strcat('Exercise 1 Prewitt with threshold : ', num2str(N)))
+    imshow(edges)
+end
+
+% For Prewitt filter
+G1 = [0 0 -1;0 1 0; 0 0 0]; 
+G2 = [-1 0 0;0 1 0;0 0 0];
+for N=0:5:102
+    edges = edge_detection(image, G1, G2,N, 2);
+    figure('name', strcat('Exercise 1 Roberts with threshold : ', num2str(N)))
+    imshow(edges)
+end
+
+%% Exercise 2 Compass method
+
+clear all;
+close all;
+clc;
+
+%R45 = [cos(pi/4) -sin(pi/4);sin(pi/4) cos(pi/4)];
+
+
+figure('name', 'Exercise 2')
+image = imread('./Images/road.png');
+p=1;
+for N=0:20:601
+    edges = compass_edge(image, N);
+    subplot(5,5,p)
+    imshow(edges)
+    title(strcat('With threshold : ', num2str(N)))
+    p=p+1;
+    
+end
+
+
+%% Exercise 3 Laplace operator
+clear all;
+close all;
+clc;
+
+
+image = imread('./Images/road.png');
+sigma = 0.5;
+size_log = 2*ceil(sigma/2)+1;
+
+for N=0:5:100
+    edges = laplace_operator(image,size_log,sigma,N);
+    figure('name', strcat('Exercise 3 with threshold : ', num2str(N)))
+    imshow(edges)
+end
+
+
+
+
+%% Exercise 4 Frei Chen method
+clear all;
+close all;
+clc;
+
+image = imread('./Images/road.png');
+
+for N=0.2:0.05:0.95
+    edges = freichen(image,N);
+    figure('name', strcat('Exercise 4 with threshold : ', num2str(N)))
+    imshow(edges)
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
