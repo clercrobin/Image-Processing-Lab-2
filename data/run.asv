@@ -1,0 +1,40 @@
+%% Exercise 4
+
+clear all;
+close all;
+clc;
+
+load("./mat/content_lut.mat");
+load("./mat/configuration_lut.mat");
+load("./mat/subj_scores_DSIS.mat");
+load("./mat/obj_metrics.mat");
+[rows,N] = size(subj_scores_DSIS);
+
+% Compute the MOS
+
+mos = mean(subj_scores_DSIS, 2);
+
+
+% Compute the CI
+alpha = 0.05;
+stds = std(subj_scores_DSIS,0,2);
+CIS = icdf('T',1-alpha/2, N)*stds/sqrt(N);
+
+figure('name', 'Exercise 3')
+
+hold on
+for i = 1:5
+    x = configuration_lut((i-1)*5+1: (i-1)*5+5);
+    
+    y = mos((i-1)*5+1: (i-1)*5+5);
+    err = CIS((i-1)*5+1: (i-1)*5+5);
+    errorbar(x,y,err)
+end
+legend('Bunny', 'Cube', 'Dragon', 'Sphere', 'Vase')
+xlabel('MOS') % x-axis label
+ylabel('Configuration') % y-axis label
+hold off
+
+% Plot the objective scores
+
+objective_plot(p2planeHausdorff_values,configuration_lut,'p2planeHausdorff')

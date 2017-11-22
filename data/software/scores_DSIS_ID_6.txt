@@ -1,0 +1,119 @@
+Stimuli: 1
+timeIn = 2636497
+4
+4
+timeOut = 2649329
+Stimuli: 2
+timeIn = 2650608
+5
+timeOut = 2664338
+Stimuli: 3
+timeIn = 2664743
+4
+timeOut = 2685482
+Stimuli: 4
+timeIn = 2686106
+2
+2
+timeOut = 2698214
+Stimuli: 5
+timeIn = 2698838
+5
+5
+timeOut = 2708584
+Stimuli: 6
+timeIn = 2709395
+4
+4
+timeOut = 2717605
+Stimuli: 7
+timeIn = 2718837
+5
+5
+timeOut = 2729494
+Stimuli: 8
+timeIn = 2729853
+2
+timeOut = 2739621
+Stimuli: 9
+timeIn = 2740245
+3
+3
+timeOut = 2747331
+Stimuli: 10
+timeIn = 2747674
+1
+1
+timeOut = 2756332
+Stimuli: 11
+timeIn = 2756988
+3
+3
+timeOut = 2774026
+Stimuli: 12
+timeIn = 2774369
+2
+2
+timeOut = 2799164
+Stimuli: 13
+timeIn = 2799819
+5
+5
+timeOut = 2805921
+Stimuli: 14
+timeIn = 2806264
+3
+3
+timeOut = 2813408
+Stimuli: 15
+timeIn = 2814064
+3
+timeOut = 2820085
+Stimuli: 16
+timeIn = 2820491
+3
+timeOut = 2829011
+Stimuli: 17
+timeIn = 2829681
+3
+timeOut = 2835783
+Stimuli: 18
+timeIn = 2836579
+5
+timeOut = 2840387
+Stimuli: 19
+timeIn = 2841653
+5
+timeOut = 2844788
+Stimuli: 20
+timeIn = 2845209
+3
+timeOut = 2853368
+Stimuli: 21
+timeIn = 2854039
+4
+timeOut = 2864540
+Stimuli: 22
+timeIn = 2864946
+4
+timeOut = 2871623
+Stimuli: 23
+timeIn = 2872390
+4
+timeOut = 2878050
+Stimuli: 24
+timeIn = 2878440
+4
+timeOut = 2884368
+Stimuli: 25
+timeIn = 2884899
+5
+timeOut = 2892184
+Stimuli: 26
+timeIn = 2892714
+5
+timeOut = 2897238
+Stimuli: 27
+timeIn = 2897644
+1
+timeOut = 2911222
