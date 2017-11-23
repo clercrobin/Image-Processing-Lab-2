@@ -50,16 +50,14 @@ benchmarking(p2pointRMSE_values,mos, cis,'p2pointRMSE_values')
 
 %% Exercise 5 fitting
 
-poly1p2planeHausdorff_values = multiple_fit(p2planeHausdorff_values,mos,1);
-poly3p2planeHausdorff_values = multiple_fit(p2planeHausdorff_values,mos,3);
-poly1p2planeRMSE_values = multiple_fit(p2planeRMSE_values,mos,1);
-poly3p2planeRMSE_values = multiple_fit(p2planeRMSE_values,mos,3);
-poly1p2pointHausdorff_values = multiple_fit(p2pointHausdorff_values,mos,1);
-poly3p2pointHausdorff_values = multiple_fit(p2pointHausdorff_values,mos,3);
-poly1p2pointRMSE_values = multiple_fit(p2pointRMSE_values,mos,1);
-poly3p2pointRMSE_values = multiple_fit(p2pointRMSE_values,mos,3);
+[poly1p2planeHausdorff_values, poly3p2planeHausdorff_values] = multiple_fit(p2planeHausdorff_values,mos);
+[poly1p2planeRMSE_values, poly3p2planeRMSE_values] = multiple_fit(p2planeRMSE_values,mos);
+[poly1p2pointHausdorff_values, poly3p2pointHausdorff_values] = multiple_fit(p2pointHausdorff_values,mos);
+[poly1p2pointRMSE_values, poly3p2pointRMSE_values] = multiple_fit(p2pointRMSE_values,mos);
 
 %% Exrcise 5 comparing 
 
-benchmarking_extended(p2planeHausdorff_values,mos, cis,poly1p2planeHausdorff_values,'p2planeHausdorff with degree 1')
-benchmarking_extended(p2planeHausdorff_values,mos, cis,poly3p2planeHausdorff_values,'p2planeHausdorff with degree 3')
+benchmarking_extended(p2planeHausdorff_values,mos, cis,poly1p2planeHausdorff_values,poly3p2planeHausdorff_values,'p2planeHausdorff')
+benchmarking_extended(p2planeRMSE_values,mos, cis,poly1p2planeRMSE_values,poly3p2planeRMSE_values,'p2planeRMSE')
+benchmarking_extended(p2pointHausdorff_values,mos, cis,poly1p2pointHausdorff_values,poly3p2pointHausdorff_values,'p2pointHausdorff')
+benchmarking_extended(p2pointRMSE_values,mos, cis,poly1p2pointRMSE_values,poly3p2pointRMSE_values,'p2pointRMSE')

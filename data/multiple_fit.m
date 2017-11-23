@@ -1,14 +1,10 @@
-function [ polys ] = multiple_fit( data, mos, degree )
+function [ p1, p3 ] = multiple_fit( data, mos )
 %UNTITLED5 Summary of this function goes here
 %   Detailed explanation goes here
-    polys = zeros(5,degree+1)
-    for i = 1:5
-        x = data((i-1)*5+1: (i-1)*5+5);
-        y = mos((i-1)*5+1: (i-1)*5+5);
-        poly = polyfit(x,y,degree);
-        polys(i,:)=poly;
-
-    end
-
+    mat = [data,mos]
+    [~,idx]= sort(mat(:,1));
+    sortedmat=mat(idx,:);
+    p1 = polyfit(sortedmat(:,1),sortedmat(:,2),1);
+    p3 = polyfit(sortedmat(:,1),sortedmat(:,2),3);
 end
 
