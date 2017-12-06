@@ -1,0 +1,33 @@
+function [ out ] = bilinearReconstruct( image, factor )
+
+    [rows, cols,chan] = size(image);
+
+    out = zeros(rows*factor, cols*factor, chan);
+
+    size(out(1:factor:end,1:factor:end,:))
+    size(image)
+    out(1:factor:end,1:factor:end,:) = image;
+
+    for x=1:1:rows
+        for y=1:1:cols
+            x
+            y
+            out(2*x,y,:) = 0.5*image(2*x-1,y,:)+0.5*image(2*x+1,y,:);
+        end
+    end
+    
+
+    for y=1:1:cols
+        for x=1:1:rows
+            out(x,2*y,:) = 0.5*image(x,2*y-1,:)+0.5*image(x,2*y+1,:);
+        end
+    end
+    
+    for y=1:1:cols
+        for x=1:1:rows
+            out(2*x,2*y,:) = 0.5*image(2*x-1,2*y-1,:)+0.5*image(2*x-1,2*y-1,:);
+        end
+    end
+
+end
+
